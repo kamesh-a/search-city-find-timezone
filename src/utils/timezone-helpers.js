@@ -1,5 +1,10 @@
-const { countryTimeZoneMap, cityTimeZoneMap, tzAbbrevationMap, zoneAndPhrasesMap, tzList } = require('../../timezone-data/tz-info');
-const { getCountriesForTimezone } = require('countries-and-timezones');
+const { 
+        countryTimeZoneMap, 
+        cityTimeZoneMap, 
+        tzAbbrevationMap, 
+        zoneAndPhrasesMap, 
+        tzList 
+    } = require('../../timezone-data/tz-info');
 /** 
     Ref: https://share.anysnap.app/fGHDsCbpQ2BL
 
@@ -28,12 +33,29 @@ const META_INFO = {
 };
 
 const DEFAULT_SHAPE = {
-    phrase: '',
+    phrase: null,
     tzList: null,
     name: null,
     meta: META_INFO
 }
 
+/**
+ * 
+ * file: timezone-data/tz-info.js
+ * 
+ * Understanding data from time zone data is important to understand code
+ * if you are able to see the shape of one map you can uncover
+ * all the data points. We have split the maps into country, city
+ * abbrevation based all the exactly same pattern each other.
+ * 
+ * But apart from below 
+ * "timezone name" splitting Asia/Kolkata - `kolkata` becomes searchable (findCountryForZone fn)
+ * "zone phrase" names are most used names for a country or place 
+ *      ex: `United States` may be referred as `USA, u.s.a, US` these variations 
+ *           we are covering here.
+ */
+
+// Ref: tzAbbrevationMap in time zone data to understand the shape
 function searchByTzKeys( phrase ) {
     const zone = phrase?.toUpperCase();
     if( tzKeys?.includes(zone)) {
@@ -50,6 +72,7 @@ function searchByTzKeys( phrase ) {
     }
 }
 
+// Ref: countryTimeZoneMap in time zone data to understand the shape
 function searchByCountryKeys( phrase ) {
     const name = phrase?.toLowerCase();
     if(countryKeys.length) {
@@ -75,6 +98,7 @@ function searchByCountryKeys( phrase ) {
     }
 }
 
+// Ref: cityTimeZoneMap in time zone data to understand the shape
 function searchByCityKeys( phrase) {
     const name = phrase?.toLowerCase();
     if(cityKeys.length) {
@@ -99,6 +123,7 @@ function searchByCityKeys( phrase) {
     }
 }
 
+// Ref: zoneAndPhrasesMap in time zone data to understand the shape
 function searchByZonePhraseKeys( phrase) {
     const name = phrase?.toLowerCase();
     const result = [];
@@ -126,49 +151,65 @@ function searchByZonePhraseKeys( phrase) {
     }
 }
 
+
+function getLastPartOfTimeZone( tzName ) {
+    if( tzName ) {
+        const tzArr = tzName?.trim()?.split('/');
+        return tzArr[tzArr.length-1];
+    }
+}
+
 function findZone(search, tzList = []) {
     let searchPhrase = search?.trim();
     if (searchPhrase.includes(' ')) {
         searchPhrase = searchPhrase.replaceAll(' ', '_');
     }
-    return tzList.filter(e => e.toLowerCase().includes(searchPhrase ?.toLowerCase()));
+    return tzList.filter( tzName => {
+        if( tzName ) {
+            const e = getLastPartOfTimeZone(tzName);
+            return e.toLowerCase().includes(searchPhrase?.toLowerCase())
+        }
+    });
 }
 
-// function getIndexOfZone(tz) {
-//     return tzList?.indexOf(tz);
-// }
+/**
+    function getIndexOfZone(tz) {
+        return tzList?.indexOf(tz);
+    }
 
-// function findZoneMatchInMap(tz, tzMap = null) {
-//     if( tzMap && tz ) {
-//         const index = getIndexOfZone(tz);
-//         const output = {
-//             [tz] : []
-//         };
+    function findZoneMatchInMap(tz, tzMap = null) {
+        if( tzMap && tz ) {
+            const index = getIndexOfZone(tz);
+            const output = {
+                [tz] : []
+            };
 
-//         tzMap.forEach((zoneList, key) => {
-//             if(zoneList.includes(index)) {
-//                 output[tz].push(key);
-//             };
-//         });
+            tzMap.forEach((zoneList, key) => {
+                if(zoneList.includes(index)) {
+                    output[tz].push(key);
+                };
+            });
 
-//         return output;
-//     }
-// }
+            return output;
+        }
+    }
 
-// function getCountryForZone(tzName) {
-//     return tzName && getCountriesForTimezone(tzName?.trim());
-// }
+    function getCountryForZone(tzName) {
+        return tzName && getCountriesForTimezone(tzName?.trim());
+    }
+ */
 
 function findCountryForZone(tzSearchPhrase) {
     // TODO: POSSIBILY OF HAVING MORE TZNAME discarding for now.
     const [tzName] = findZone(tzSearchPhrase, tzList);
     const result = [];
+    const searchMatchText = getLastPartOfTimeZone(tzName);
     countryTimeZoneMap
         .forEach( (tzList, key) => {
             if(tzList.includes(tzName)) {
                 result.push({
                     ...DEFAULT_SHAPE,
-                    phrase: tzSearchPhrase,
+                    phrase: searchMatchText,
                     tzList: [tzName],
                     name: key,
                     meta: {
@@ -187,7 +228,7 @@ function findCountryForZone(tzSearchPhrase) {
  * CountryName - done
  * cityName - done
  * timeZoneName - done
- * zonePhrase
+ * zonePhrase - done
  */
 function searchByPhrase(text) {
     
@@ -220,18 +261,22 @@ function searchByPhrase(text) {
             result = [ ...result, ...phraseResult ];
         }
         
-       
         if( result?.length ) {
-            return result;
+            return {
+                result,
+                err: false
+            };
         }
 
-        return [DEFAULT_SHAPE];
+        return {
+            err: true,
+            result: [DEFAULT_SHAPE]
+        };
     }
-    
 }
 
 
-console.time('searchByPhrase')
+// console.time('searchByPhrase')
 // var out = findCountryForZone('kolkat');
 // var out= searchByCountryKeys('alb')
 // var out= searchByCityKeys('tanjore')
@@ -239,14 +284,15 @@ console.time('searchByPhrase')
 
 
 // var out = searchByPhrase('kolkat');
-var out= searchByPhrase('mid')
+// var out= searchByPhrase('broken')
+// var out= searchByPhrase('korea')
 // var out= searchByPhrase('tanjore')
 // var out = searchByPhrase('AZOST')
 // var out = searchByPhrase('U.S.a')
-console.log(out)
-console.timeEnd('searchByPhrase')
+// console.log(out)
+// console.timeEnd('searchByPhrase')
 
 
 module.exports = {
-    findZone,
+    searchByPhrase
 }

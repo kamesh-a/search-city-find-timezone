@@ -5,7 +5,14 @@
  * Build timezone to well known names
  */
  const {join} = require('path');
- const { tzList, countryTimeZoneMap, cityTimeZoneMap, tzAbbrevationMap, zoneAndPhrasesMap } = require("../timezone-data/tz-info");
+ const { 
+        tzList, 
+        countryTimeZoneMap, 
+        cityTimeZoneMap, 
+        tzAbbrevationMap, 
+        zoneAndPhrasesMap 
+    } = require("../timezone-data/tz-info");
+    
  const { writeToFile } = require("./write-to-file");
  
  const memoizedTimezone = [];
