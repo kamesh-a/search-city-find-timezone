@@ -1,0 +1,2 @@
+Countries JSON : https://gist.github.com/keeguon/2310008 ( Includes currency, captial, code etc )
+Countries & Capital : https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-capital-city.json
