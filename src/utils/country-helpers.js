@@ -1,4 +1,6 @@
 import { getCountryForTimezone } from 'countries-and-timezones';
+import { countryAndCapitalMap } from '../../timezone-data/tz-info';
+import { formatDate, getTzShortName } from './date-helpers';
 /**
  * 
  * @returns {object} countryInfo
@@ -21,7 +23,52 @@ function getCountryInfo( tzName ) {
    }
 }
 
+/**
+ * 
+ * if( tzName ) {
+        const zone = tzName?.trim();
+        const { id: countryCode, name: countryName } = getCountryInfo(zone);
+        const formattedTime = formatDate(zone);
+        const [day,time,tzFullName] = formattedTime.split('__');
+        return {
+            time,
+            day,
+            phrase: keyWordMatch,
+            countryCode,
+            countryName: countryName,
+            tzRaw: zone,
+            tzShort: getTzShortName(tzFullName),
+            tzFull : tzFullName
+        }
+    }
+ */
+
+// TODO: use memoize for one minute, because minutes won't change.
+function getCountriesAndCapital() {
+    if( countryAndCapitalMap?.size ) {
+        const map = countryAndCapitalMap;
+        const result = []
+        map
+         .forEach(({ capital, tzFull : tzRaw }, key) => {
+            const formattedTime = formatDate(tzRaw);
+            const [day,time,tzFullName] = formattedTime.split('__');
+            const info = {
+                time,
+                day,
+                phrase: capital,
+                countryName: key,
+                tzRaw,
+                tzShort: getTzShortName(tzFullName),
+                tzFull : tzFullName
+            }
+            result.push(info);
+        });
+        return result;
+    } 
+}
+
 
 export {
-    getCountryInfo
+    getCountryInfo,
+    getCountriesAndCapital
 }

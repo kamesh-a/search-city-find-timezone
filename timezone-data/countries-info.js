@@ -1,3 +1,7 @@
+export const top100Countries = ["Afghanistan","Algeria","Angola","Argentina","Australia","Austria","Azerbaijan","Bangladesh","Belarus","Belgium","Benin","Bolivia","Brazil","Burkina Faso","Myanmar","Burundi","Cambodia","Cameroon","Canada","Chad","Chile","China","Colombia","Congo Republic","Cote d'Ivoire","Cuba","Czechia","Dominican Republic","Ecuador","Egypt","Ethiopia","France","Germany","Ghana","Greece","Guatemala","Guinea","Haiti","Honduras","Hungary","India","Indonesia","Iran","Iraq","Israel","Italy","Japan","Jordan","Kazakhstan","Kenya","North Korea","South Korea","Madagascar","Malawi","Malaysia","Mali","Mexico","Morocco","Mozambique","Nepal","Netherlands","Niger","Nigeria","Pakistan","Peru","Philippines","Poland","Portugal","Romania","Russia","Rwanda","Saudi Arabia","Senegal","Somalia","South Africa","South Sudan","Spain","Sri Lanka","Sudan","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Togo","Tunisia","Turkey","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uzbekistan","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"];
+
+// More data, like 259 records
+// but in tz-info is main database we only use 100 countries.
 export const countryAndCaptial = [{
     "name": "Afghanistan",
     "code": "AF",

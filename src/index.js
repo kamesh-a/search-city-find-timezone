@@ -1,5 +1,6 @@
 import { getSystemTimezone } from './utils/date-helpers';
 import { getTimeWithCityCountryZoneName } from './utils/compute-helpers';
+import { getCountriesAndCapital } from './utils/country-helpers';
 
 // TODO: prioritization plugin
 // TODO: filer unique timezone plugin - done
@@ -63,5 +64,6 @@ function computeTimeByCityOrCountryOrZone( userInputText ) {
 }
 
 export {
-    computeTimeByCityOrCountryOrZone as getTzInfo 
+    computeTimeByCityOrCountryOrZone as getTzInfo,
+    getCountriesAndCapital as getCountryInfo
 }

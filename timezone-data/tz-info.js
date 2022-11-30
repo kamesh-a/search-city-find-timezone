@@ -1,5 +1,5 @@
 // All Timezones alone
-const tzList = ["Africa/Abidjan", "Africa/Accra", "Africa/Addis_Ababa", "Africa/Algiers", "Africa/Asmara", "Africa/Bamako", "Africa/Bangui", "Africa/Banjul", "Africa/Bissau", "Africa/Blantyre", "Africa/Brazzaville", "Africa/Bujumbura", "Africa/Cairo", "Africa/Casablanca", "Africa/Ceuta", "Africa/Conakry", "Africa/Dakar", "Africa/Dar_es_Salaam", "Africa/Djibouti", "Africa/Douala", "Africa/El_Aaiun", "Africa/Freetown", "Africa/Gaborone", "Africa/Harare", "Africa/Johannesburg", "Africa/Juba", "Africa/Kampala", "Africa/Khartoum", "Africa/Kigali", "Africa/Kinshasa", "Africa/Lagos", "Africa/Libreville", "Africa/Lome", "Africa/Luanda", "Africa/Lubumbashi", "Africa/Lusaka", "Africa/Malabo", "Africa/Maputo", "Africa/Maseru", "Africa/Mbabane", "Africa/Mogadishu", "Africa/Monrovia", "Africa/Nairobi", "Africa/Ndjamena", "Africa/Niamey", "Africa/Nouakchott", "Africa/Ouagadougou", "Africa/Porto-Novo", "Africa/Sao_Tome", "Africa/Tripoli", "Africa/Tunis", "Africa/Windhoek", "America/Adak", "America/Anchorage", "America/Anguilla", "America/Antigua", "America/Araguaina", "America/Argentina/Buenos_Aires", "America/Argentina/Catamarca", "America/Argentina/Cordoba", "America/Argentina/Jujuy", "America/Argentina/La_Rioja", "America/Argentina/Mendoza", "America/Argentina/Rio_Gallegos", "America/Argentina/Salta", "America/Argentina/San_Juan", "America/Argentina/San_Luis", "America/Argentina/Tucuman", "America/Argentina/Ushuaia", "America/Aruba", "America/Asuncion", "America/Atikokan", "America/Bahia", "America/Bahia_Banderas", "America/Barbados", "America/Belem", "America/Belize", "America/Blanc-Sablon", "America/Boa_Vista", "America/Bogota", "America/Boise", "America/Cambridge_Bay", "America/Campo_Grande", "America/Cancun", "America/Caracas", "America/Cayenne", "America/Cayman", "America/Chicago", "America/Chihuahua", "America/Costa_Rica", "America/Creston", "America/Cuiaba", "America/Curacao", "America/Danmarkshavn", "America/Dawson", "America/Dawson_Creek", "America/Denver", "America/Detroit", "America/Dominica", "America/Edmonton", "America/Eirunepe", "America/El_Salvador", "America/Fort_Nelson", "America/Fortaleza", "America/Glace_Bay", "America/Goose_Bay", "America/Grand_Turk", "America/Grenada", "America/Guadeloupe", "America/Guatemala", "America/Guayaquil", "America/Guyana", "America/Halifax", "America/Havana", "America/Hermosillo", "America/Indiana/Indianapolis", "America/Indiana/Knox", "America/Indiana/Marengo", "America/Indiana/Petersburg", "America/Indiana/Tell_City", "America/Indiana/Vevay", "America/Indiana/Vincennes", "America/Indiana/Winamac", "America/Inuvik", "America/Iqaluit", "America/Jamaica", "America/Juneau", "America/Kentucky/Louisville", "America/Kentucky/Monticello", "America/Kralendijk", "America/La_Paz", "America/Lima", "America/Los_Angeles", "America/Lower_Princes", "America/Maceio", "America/Managua", "America/Manaus", "America/Marigot", "America/Martinique", "America/Matamoros", "America/Mazatlan", "America/Menominee", "America/Merida", "America/Metlakatla", "America/Mexico_City", "America/Miquelon", "America/Moncton", "America/Monterrey", "America/Montevideo", "America/Montserrat", "America/Nassau", "America/New_York", "America/Nipigon", "America/Nome", "America/Noronha", "America/North_Dakota/Beulah", "America/North_Dakota/Center", "America/North_Dakota/New_Salem", "America/Nuuk", "America/Ojinaga", "America/Panama", "America/Pangnirtung", "America/Paramaribo", "America/Phoenix", "America/Port-au-Prince", "America/Port_of_Spain", "America/Porto_Velho", "America/Puerto_Rico", "America/Punta_Arenas", "America/Rainy_River", "America/Rankin_Inlet", "America/Recife", "America/Regina", "America/Resolute", "America/Rio_Branco", "America/Santarem", "America/Santiago", "America/Santo_Domingo", "America/Sao_Paulo", "America/Scoresbysund", "America/Sitka", "America/St_Barthelemy", "America/St_Johns", "America/St_Kitts", "America/St_Lucia", "America/St_Thomas", "America/St_Vincent", "America/Swift_Current", "America/Tegucigalpa", "America/Thule", "America/Thunder_Bay", "America/Tijuana", "America/Toronto", "America/Tortola", "America/Vancouver", "America/Whitehorse", "America/Winnipeg", "America/Yakutat", "America/Yellowknife", "Antarctica/Casey", "Antarctica/Davis", "Antarctica/DumontDUrville", "Antarctica/Macquarie", "Antarctica/Mawson", "Antarctica/McMurdo", "Antarctica/Palmer", "Antarctica/Rothera", "Antarctica/Syowa", "Antarctica/Troll", "Antarctica/Vostok", "Arctic/Longyearbyen", "Asia/Aden", "Asia/Almaty", "Asia/Amman", "Asia/Anadyr", "Asia/Aqtau", "Asia/Aqtobe", "Asia/Ashgabat", "Asia/Atyrau", "Asia/Baghdad", "Asia/Bahrain", "Asia/Baku", "Asia/Bangkok", "Asia/Barnaul", "Asia/Beirut", "Asia/Bishkek", "Asia/Brunei", "Asia/Chita", "Asia/Choibalsan", "Asia/Colombo", "Asia/Damascus", "Asia/Dhaka", "Asia/Dili", "Asia/Dubai", "Asia/Dushanbe", "Asia/Famagusta", "Asia/Gaza", "Asia/Hebron", "Asia/Ho_Chi_Minh", "Asia/Hong_Kong", "Asia/Hovd", "Asia/Irkutsk", "Asia/Jakarta", "Asia/Jayapura", "Asia/Jerusalem", "Asia/Kabul", "Asia/Kamchatka", "Asia/Karachi", "Asia/Kathmandu", "Asia/Khandyga", "Asia/Kolkata", "Asia/Krasnoyarsk", "Asia/Kuala_Lumpur", "Asia/Kuching", "Asia/Kuwait", "Asia/Macau", "Asia/Magadan", "Asia/Makassar", "Asia/Manila", "Asia/Muscat", "Asia/Nicosia", "Asia/Novokuznetsk", "Asia/Novosibirsk", "Asia/Omsk", "Asia/Oral", "Asia/Phnom_Penh", "Asia/Pontianak", "Asia/Pyongyang", "Asia/Qatar", "Asia/Qostanay", "Asia/Qyzylorda", "Asia/Riyadh", "Asia/Sakhalin", "Asia/Samarkand", "Asia/Seoul", "Asia/Shanghai", "Asia/Singapore", "Asia/Srednekolymsk", "Asia/Taipei", "Asia/Tashkent", "Asia/Tbilisi", "Asia/Tehran", "Asia/Thimphu", "Asia/Tokyo", "Asia/Tomsk", "Asia/Ulaanbaatar", "Asia/Urumqi", "Asia/Ust-Nera", "Asia/Vientiane", "Asia/Vladivostok", "Asia/Yakutsk", "Asia/Yangon", "Asia/Yekaterinburg", "Asia/Yerevan", "Atlantic/Azores", "Atlantic/Bermuda", "Atlantic/Canary", "Atlantic/Cape_Verde", "Atlantic/Faroe", "Atlantic/Madeira", "Atlantic/Reykjavik", "Atlantic/South_Georgia", "Atlantic/St_Helena", "Atlantic/Stanley", "Australia/Adelaide", "Australia/Brisbane", "Australia/Broken_Hill", "Australia/Darwin", "Australia/Eucla", "Australia/Hobart", "Australia/Lindeman", "Australia/Lord_Howe", "Australia/Melbourne", "Australia/Perth", "Australia/Sydney", "Europe/Amsterdam", "Europe/Andorra", "Europe/Astrakhan", "Europe/Athens", "Europe/Belgrade", "Europe/Berlin", "Europe/Bratislava", "Europe/Brussels", "Europe/Bucharest", "Europe/Budapest", "Europe/Busingen", "Europe/Chisinau", "Europe/Copenhagen", "Europe/Dublin", "Europe/Gibraltar", "Europe/Guernsey", "Europe/Helsinki", "Europe/Isle_of_Man", "Europe/Istanbul", "Europe/Jersey", "Europe/Kaliningrad", "Europe/Kirov", "Europe/Kiev", "Europe/Lisbon", "Europe/Ljubljana", "Europe/London", "Europe/Luxembourg", "Europe/Madrid", "Europe/Malta", "Europe/Mariehamn", "Europe/Minsk", "Europe/Monaco", "Europe/Moscow", "Europe/Oslo", "Europe/Paris", "Europe/Podgorica", "Europe/Prague", "Europe/Riga", "Europe/Rome", "Europe/Samara", "Europe/San_Marino", "Europe/Sarajevo", "Europe/Saratov", "Europe/Simferopol", "Europe/Skopje", "Europe/Sofia", "Europe/Stockholm", "Europe/Tallinn", "Europe/Tirane", "Europe/Ulyanovsk", "Europe/Uzhgorod", "Europe/Vaduz", "Europe/Vatican", "Europe/Vienna", "Europe/Vilnius", "Europe/Volgograd", "Europe/Warsaw", "Europe/Zagreb", "Europe/Zaporozhye", "Europe/Zurich", "Indian/Antananarivo", "Indian/Chagos", "Indian/Christmas", "Indian/Cocos", "Indian/Comoro", "Indian/Kerguelen", "Indian/Mahe", "Indian/Maldives", "Indian/Mauritius", "Indian/Mayotte", "Indian/Reunion", "Pacific/Apia", "Pacific/Auckland", "Pacific/Bougainville", "Pacific/Chatham", "Pacific/Chuuk", "Pacific/Easter", "Pacific/Efate", "Pacific/Fakaofo", "Pacific/Fiji", "Pacific/Funafuti", "Pacific/Galapagos", "Pacific/Gambier", "Pacific/Guadalcanal", "Pacific/Guam", "Pacific/Honolulu", "Pacific/Kanton", "Pacific/Kiritimati", "Pacific/Kosrae", "Pacific/Kwajalein", "Pacific/Majuro", "Pacific/Marquesas", "Pacific/Midway", "Pacific/Nauru", "Pacific/Niue", "Pacific/Norfolk", "Pacific/Noumea", "Pacific/Pago_Pago", "Pacific/Palau", "Pacific/Pitcairn", "Pacific/Pohnpei", "Pacific/Port_Moresby", "Pacific/Rarotonga", "Pacific/Saipan", "Pacific/Tahiti", "Pacific/Tarawa", "Pacific/Tongatapu", "Pacific/Wake", "Pacific/Wallis", "Australia/Currie","America/Montreal","America/Louisville","America/Knox_IN","America/Indianapolis"];
+const tzList = ["Africa/Abidjan", "Africa/Accra", "Africa/Addis_Ababa", "Africa/Algiers", "Africa/Asmara", "Africa/Bamako", "Africa/Bangui", "Africa/Banjul", "Africa/Bissau", "Africa/Blantyre", "Africa/Brazzaville", "Africa/Bujumbura", "Africa/Cairo", "Africa/Casablanca", "Africa/Ceuta", "Africa/Conakry", "Africa/Dakar", "Africa/Dar_es_Salaam", "Africa/Djibouti", "Africa/Douala", "Africa/El_Aaiun", "Africa/Freetown", "Africa/Gaborone", "Africa/Harare", "Africa/Johannesburg", "Africa/Juba", "Africa/Kampala", "Africa/Khartoum", "Africa/Kigali", "Africa/Kinshasa", "Africa/Lagos", "Africa/Libreville", "Africa/Lome", "Africa/Luanda", "Africa/Lubumbashi", "Africa/Lusaka", "Africa/Malabo", "Africa/Maputo", "Africa/Maseru", "Africa/Mbabane", "Africa/Mogadishu", "Africa/Monrovia", "Africa/Nairobi", "Africa/Ndjamena", "Africa/Niamey", "Africa/Nouakchott", "Africa/Ouagadougou", "Africa/Porto-Novo", "Africa/Sao_Tome", "Africa/Tripoli", "Africa/Tunis", "Africa/Windhoek", "America/Adak", "America/Anchorage", "America/Anguilla", "America/Antigua", "America/Araguaina", "America/Argentina/Buenos_Aires", "America/Argentina/Catamarca", "America/Argentina/Cordoba", "America/Argentina/Jujuy", "America/Argentina/La_Rioja", "America/Argentina/Mendoza", "America/Argentina/Rio_Gallegos", "America/Argentina/Salta", "America/Argentina/San_Juan", "America/Argentina/San_Luis", "America/Argentina/Tucuman", "America/Argentina/Ushuaia", "America/Aruba", "America/Asuncion", "America/Atikokan", "America/Bahia", "America/Bahia_Banderas", "America/Barbados", "America/Belem", "America/Belize", "America/Blanc-Sablon", "America/Boa_Vista", "America/Bogota", "America/Boise", "America/Cambridge_Bay", "America/Campo_Grande", "America/Cancun", "America/Caracas", "America/Cayenne", "America/Cayman", "America/Chicago", "America/Chihuahua", "America/Costa_Rica", "America/Creston", "America/Cuiaba", "America/Curacao", "America/Danmarkshavn", "America/Dawson", "America/Dawson_Creek", "America/Denver", "America/Detroit", "America/Dominica", "America/Edmonton", "America/Eirunepe", "America/El_Salvador", "America/Fort_Nelson", "America/Fortaleza", "America/Glace_Bay", "America/Goose_Bay", "America/Grand_Turk", "America/Grenada", "America/Guadeloupe", "America/Guatemala", "America/Guayaquil", "America/Guyana", "America/Halifax", "America/Havana", "America/Hermosillo", "America/Indiana/Indianapolis", "America/Indiana/Knox", "America/Indiana/Marengo", "America/Indiana/Petersburg", "America/Indiana/Tell_City", "America/Indiana/Vevay", "America/Indiana/Vincennes", "America/Indiana/Winamac", "America/Inuvik", "America/Iqaluit", "America/Jamaica", "America/Juneau", "America/Kentucky/Louisville", "America/Kentucky/Monticello", "America/Kralendijk", "America/La_Paz", "America/Lima", "America/Los_Angeles", "America/Lower_Princes", "America/Maceio", "America/Managua", "America/Manaus", "America/Marigot", "America/Martinique", "America/Matamoros", "America/Mazatlan", "America/Menominee", "America/Merida", "America/Metlakatla", "America/Mexico_City", "America/Miquelon", "America/Moncton", "America/Monterrey", "America/Montevideo", "America/Montserrat", "America/Nassau", "America/New_York", "America/Nipigon", "America/Nome", "America/Noronha", "America/North_Dakota/Beulah", "America/North_Dakota/Center", "America/North_Dakota/New_Salem", "America/Nuuk", "America/Ojinaga", "America/Panama", "America/Pangnirtung", "America/Paramaribo", "America/Phoenix", "America/Port-au-Prince", "America/Port_of_Spain", "America/Porto_Velho", "America/Puerto_Rico", "America/Punta_Arenas", "America/Rainy_River", "America/Rankin_Inlet", "America/Recife", "America/Regina", "America/Resolute", "America/Rio_Branco", "America/Santarem", "America/Santiago", "America/Santo_Domingo", "America/Sao_Paulo", "America/Scoresbysund", "America/Sitka", "America/St_Barthelemy", "America/St_Johns", "America/St_Kitts", "America/St_Lucia", "America/St_Thomas", "America/St_Vincent", "America/Swift_Current", "America/Tegucigalpa", "America/Thule", "America/Thunder_Bay", "America/Tijuana", "America/Toronto", "America/Tortola", "America/Vancouver", "America/Whitehorse", "America/Winnipeg", "America/Yakutat", "America/Yellowknife", "Antarctica/Casey", "Antarctica/Davis", "Antarctica/DumontDUrville", "Antarctica/Macquarie", "Antarctica/Mawson", "Antarctica/McMurdo", "Antarctica/Palmer", "Antarctica/Rothera", "Antarctica/Syowa", "Antarctica/Troll", "Antarctica/Vostok", "Arctic/Longyearbyen", "Asia/Aden", "Asia/Almaty", "Asia/Amman", "Asia/Anadyr", "Asia/Aqtau", "Asia/Aqtobe", "Asia/Ashgabat", "Asia/Atyrau", "Asia/Baghdad", "Asia/Bahrain", "Asia/Baku", "Asia/Bangkok", "Asia/Barnaul", "Asia/Beirut", "Asia/Bishkek", "Asia/Brunei", "Asia/Chita", "Asia/Choibalsan", "Asia/Colombo", "Asia/Damascus", "Asia/Dhaka", "Asia/Dili", "Asia/Dubai", "Asia/Dushanbe", "Asia/Famagusta", "Asia/Gaza", "Asia/Hebron", "Asia/Ho_Chi_Minh", "Asia/Hong_Kong", "Asia/Hovd", "Asia/Irkutsk", "Asia/Jakarta", "Asia/Jayapura", "Asia/Jerusalem", "Asia/Kabul", "Asia/Kamchatka", "Asia/Karachi", "Asia/Kathmandu", "Asia/Khandyga", "Asia/Kolkata", "Asia/Krasnoyarsk", "Asia/Kuala_Lumpur", "Asia/Kuching", "Asia/Kuwait", "Asia/Macau", "Asia/Magadan", "Asia/Makassar", "Asia/Manila", "Asia/Muscat", "Asia/Nicosia", "Asia/Novokuznetsk", "Asia/Novosibirsk", "Asia/Omsk", "Asia/Oral", "Asia/Phnom_Penh", "Asia/Pontianak", "Asia/Pyongyang", "Asia/Qatar", "Asia/Qostanay", "Asia/Qyzylorda", "Asia/Riyadh", "Asia/Sakhalin", "Asia/Samarkand", "Asia/Seoul", "Asia/Shanghai", "Asia/Singapore", "Asia/Srednekolymsk", "Asia/Taipei", "Asia/Tashkent", "Asia/Tbilisi", "Asia/Tehran", "Asia/Thimphu", "Asia/Tokyo", "Asia/Tomsk", "Asia/Ulaanbaatar", "Asia/Urumqi", "Asia/Ust-Nera", "Asia/Vientiane", "Asia/Vladivostok", "Asia/Yakutsk", "Asia/Yangon", "Asia/Yekaterinburg", "Asia/Yerevan", "Atlantic/Azores", "Atlantic/Bermuda", "Atlantic/Canary", "Atlantic/Cape_Verde", "Atlantic/Faroe", "Atlantic/Madeira", "Atlantic/Reykjavik", "Atlantic/South_Georgia", "Atlantic/St_Helena", "Atlantic/Stanley", "Australia/Adelaide", "Australia/Brisbane", "Australia/Broken_Hill", "Australia/Darwin", "Australia/Eucla", "Australia/Hobart", "Australia/Lindeman", "Australia/Lord_Howe", "Australia/Melbourne", "Australia/Perth", "Australia/Sydney", "Europe/Amsterdam", "Europe/Andorra", "Europe/Astrakhan", "Europe/Athens", "Europe/Belgrade", "Europe/Berlin", "Europe/Bratislava", "Europe/Brussels", "Europe/Bucharest", "Europe/Budapest", "Europe/Busingen", "Europe/Chisinau", "Europe/Copenhagen", "Europe/Dublin", "Europe/Gibraltar", "Europe/Guernsey", "Europe/Helsinki", "Europe/Isle_of_Man", "Europe/Istanbul", "Europe/Jersey", "Europe/Kaliningrad", "Europe/Kirov", "Europe/Kiev", "Europe/Lisbon", "Europe/Ljubljana", "Europe/London", "Europe/Luxembourg", "Europe/Madrid", "Europe/Malta", "Europe/Mariehamn", "Europe/Minsk", "Europe/Monaco", "Europe/Moscow", "Europe/Oslo", "Europe/Paris", "Europe/Podgorica", "Europe/Prague", "Europe/Riga", "Europe/Rome", "Europe/Samara", "Europe/San_Marino", "Europe/Sarajevo", "Europe/Saratov", "Europe/Simferopol", "Europe/Skopje", "Europe/Sofia", "Europe/Stockholm", "Europe/Tallinn", "Europe/Tirane", "Europe/Ulyanovsk", "Europe/Uzhgorod", "Europe/Vaduz", "Europe/Vatican", "Europe/Vienna", "Europe/Vilnius", "Europe/Volgograd", "Europe/Warsaw", "Europe/Zagreb", "Europe/Zaporozhye", "Europe/Zurich", "Indian/Antananarivo", "Indian/Chagos", "Indian/Christmas", "Indian/Cocos", "Indian/Comoro", "Indian/Kerguelen", "Indian/Mahe", "Indian/Maldives", "Indian/Mauritius", "Indian/Mayotte", "Indian/Reunion", "Pacific/Apia", "Pacific/Auckland", "Pacific/Bougainville", "Pacific/Chatham", "Pacific/Chuuk", "Pacific/Easter", "Pacific/Efate", "Pacific/Fakaofo", "Pacific/Fiji", "Pacific/Funafuti", "Pacific/Galapagos", "Pacific/Gambier", "Pacific/Guadalcanal", "Pacific/Guam", "Pacific/Honolulu", "Pacific/Kanton", "Pacific/Kiritimati", "Pacific/Kosrae", "Pacific/Kwajalein", "Pacific/Majuro", "Pacific/Marquesas", "Pacific/Midway", "Pacific/Nauru", "Pacific/Niue", "Pacific/Norfolk", "Pacific/Noumea", "Pacific/Pago_Pago", "Pacific/Palau", "Pacific/Pitcairn", "Pacific/Pohnpei", "Pacific/Port_Moresby", "Pacific/Rarotonga", "Pacific/Saipan", "Pacific/Tahiti", "Pacific/Tarawa", "Pacific/Tongatapu", "Pacific/Wake", "Pacific/Wallis", "Australia/Currie", "America/Montreal", "America/Louisville", "America/Knox_IN", "America/Indianapolis"];
 const cityTimeZoneMap = new Map([
     ["Ras Al Khaimah City", ["Asia/Dubai"]],
     ["Dubai", ["Asia/Dubai"]],
@@ -4746,7 +4746,7 @@ const cityTimeZoneMap = new Map([
 // TODO: Use the country-and-timezone api to get name of country if it is present in country list
 const countryTimeZoneMap = new Map([
     ["Afghanistan", ["Asia/Kabul"]],
-    ["Åland", ["Europe/Mariehamn"]],
+    ["Aland", ["Europe/Mariehamn"]],
     ["Albania", ["Europe/Tirane"]],
     ["Algeria", ["Africa/Algiers"]],
     ["American Samoa", ["Pacific/Apia"]],
@@ -4925,7 +4925,7 @@ const countryTimeZoneMap = new Map([
     ["Portugal", ["Atlantic/Azores", "Atlantic/Madeira", "Europe/Lisbon"]],
     ["Puerto Rico", ["America/Puerto_Rico"]],
     ["Qatar", ["Asia/Qatar"]],
-    ["Réunion", ["Indian/Reunion"]],
+    ["Reunion", ["Indian/Reunion"]],
     ["Romania", ["Europe/Bucharest"]],
     ["Russia", ["Asia/Anadyr", "Asia/Irkutsk", "Asia/Kamchatka", "Asia/Krasnoyarsk", "Asia/Magadan", "Asia/Novokuznetsk", "Asia/Novosibirsk", "Asia/Omsk", "Asia/Sakhalin", "Asia/Srednekolymsk", "Asia/Ust-Nera", "Asia/Vladivostok", "Asia/Yakutsk", "Asia/Yekaterinburg", "Europe/Kaliningrad", "Europe/Moscow", "Europe/Samara", "Europe/Ulyanovsk", "Europe/Volgograd"]],
     ["Rwanda", ["Africa/Kigali"]],
@@ -4936,7 +4936,7 @@ const countryTimeZoneMap = new Map([
     ["Saint Pierre and Miquelon", ["America/Miquelon"]],
     ["Samoa", ["Pacific/Apia"]],
     ["San Marino", ["Europe/San_Marino"]],
-    ["São Tomé and Príncipe", ["Africa/Sao_Tome"]],
+    ["Sao Tome and Principe", ["Africa/Sao_Tome"]],
     ["Saudi Arabia", ["Asia/Riyadh"]],
     ["Senegal", ["Africa/Dakar"]],
     ["Serbia", ["Europe/Belgrade"]],
@@ -5226,10 +5226,414 @@ const zoneAndPhrasesMap = new Map([
     ["Pacific/Kanton", ["enderbury"]]
 ])
 
+const countryAndCapitalMap = new Map([
+    ["Afghanistan", {
+        "capital": "Kabul",
+        "tzFull": "Asia/Kabul"
+    }],
+    ["Algeria", {
+        "capital": "Algiers",
+        "tzFull": "Africa/Algiers"
+    }],
+    ["Angola", {
+        "capital": "Luanda",
+        "tzFull": "Africa/Luanda"
+    }],
+    ["Argentina", {
+        "capital": "Buenos Aires",
+        "tzFull": "America/Buenos_Aires"
+    }],
+    ["Australia", {
+        "capital": "Canberra",
+        "tzFull": "Australia/Sydney"
+    }],
+    ["Austria", {
+        "capital": "Vienna",
+        "tzFull": "Europe/Vienna"
+    }],
+    ["Azerbaijan", {
+        "capital": "Baku",
+        "tzFull": "Asia/Baku"
+    }],
+    ["Bangladesh", {
+        "capital": "Dhaka",
+        "tzFull": "Asia/Dhaka"
+    }],
+    ["Belarus", {
+        "capital": "Minsk",
+        "tzFull": "Europe/Minsk"
+    }],
+    ["Belgium", {
+        "capital": "Brussels",
+        "tzFull": "Europe/Brussels"
+    }],
+    ["Benin", {
+        "capital": "Porto-Novo",
+        "tzFull": "Africa/Porto-Novo"
+    }],
+    ["Bolivia", {
+        "capital": "Sucre",
+        "tzFull": "America/La_Paz"
+    }],
+    ["Brazil", {
+        "capital": "Brasilia",
+        "tzFull": "America/Sao_Paulo"
+    }],
+    ["Burkina Faso", {
+        "capital": "Ouagadougou",
+        "tzFull": "Africa/Ouagadougou"
+    }],
+    ["Myanmar", {
+        "capital": "Nay Pyi Taw",
+        "tzFull": "Asia/Rangoon"
+    }],
+    ["Burundi", {
+        "capital": "Gitega",
+        "tzFull": "Africa/Bujumbura"
+    }],
+    ["Cambodia", {
+        "capital": "Phnom Penh",
+        "tzFull": "Asia/Phnom_Penh"
+    }],
+    ["Cameroon", {
+        "capital": "Yaounde",
+        "tzFull": "Africa/Douala"
+    }],
+    ["Canada", {
+        "capital": "Ottawa",
+        "tzFull": "America/Toronto"
+    }],
+    ["Chad", {
+        "capital": "N'Djamena",
+        "tzFull": "Africa/Ndjamena"
+    }],
+    ["Chile", {
+        "capital": "Santiago",
+        "tzFull": "America/Santiago"
+    }],
+    ["China", {
+        "capital": "Beijing",
+        "tzFull": "Asia/Shanghai"
+    }],
+    ["Colombia", {
+        "capital": "Bogota",
+        "tzFull": "America/Bogota"
+    }],
+    ["Congo Republic", {
+        "capital": "Brazzaville",
+        "tzFull": "Africa/Brazzaville"
+    }],
+    ["Cote d'Ivoire", {
+        "capital": "Yamoussoukro",
+        "tzFull": "Africa/Abidjan"
+    }],
+    ["Cuba", {
+        "capital": "Havana",
+        "tzFull": "America/Havana"
+    }],
+    ["Czechia", {
+        "capital": "Prague",
+        "tzFull": "Europe/Prague"
+    }],
+    ["Dominican Republic", {
+        "capital": "Santo Domingo",
+        "tzFull": "America/Santo_Domingo"
+    }],
+    ["Ecuador", {
+        "capital": "Quito",
+        "tzFull": "America/Guayaquil"
+    }],
+    ["Egypt", {
+        "capital": "Cairo",
+        "tzFull": "Africa/Cairo"
+    }],
+    ["Ethiopia", {
+        "capital": "Addis Ababa",
+        "tzFull": "Africa/Addis_Ababa"
+    }],
+    ["France", {
+        "capital": "Paris",
+        "tzFull": "Europe/Paris"
+    }],
+    ["Germany", {
+        "capital": "Berlin",
+        "tzFull": "Europe/Berlin"
+    }],
+    ["Ghana", {
+        "capital": "Accra",
+        "tzFull": "Africa/Accra"
+    }],
+    ["Greece", {
+        "capital": "Athens",
+        "tzFull": "Europe/Athens"
+    }],
+    ["Guatemala", {
+        "capital": "Guatemala City",
+        "tzFull": "America/Guatemala"
+    }],
+    ["Guinea", {
+        "capital": "Conakry",
+        "tzFull": "Africa/Conakry"
+    }],
+    ["Haiti", {
+        "capital": "Port-au-Prince",
+        "tzFull": "America/Port-au-Prince"
+    }],
+    ["Honduras", {
+        "capital": "Tegucigalpa",
+        "tzFull": "America/Tegucigalpa"
+    }],
+    ["Hungary", {
+        "capital": "Budapest",
+        "tzFull": "Europe/Budapest"
+    }],
+    ["India", {
+        "capital": "New Delhi",
+        "tzFull": "Asia/Calcutta"
+    }],
+    ["Indonesia", {
+        "capital": "Jakarta",
+        "tzFull": "Asia/Jakarta"
+    }],
+    ["Iran", {
+        "capital": "Tehran",
+        "tzFull": "Asia/Tehran"
+    }],
+    ["Iraq", {
+        "capital": "Baghdad",
+        "tzFull": "Asia/Baghdad"
+    }],
+    ["Israel", {
+        "capital": "Jerusalem",
+        "tzFull": "Asia/Jerusalem"
+    }],
+    ["Italy", {
+        "capital": "Rome",
+        "tzFull": "Europe/Rome"
+    }],
+    ["Japan", {
+        "capital": "Tokyo",
+        "tzFull": "Asia/Tokyo"
+    }],
+    ["Jordan", {
+        "capital": "Amman",
+        "tzFull": "Asia/Amman"
+    }],
+    ["Kazakhstan", {
+        "capital": "Nur-Sultan",
+        "tzFull": "Asia/Almaty"
+    }],
+    ["Kenya", {
+        "capital": "Nairobi",
+        "tzFull": "Africa/Nairobi"
+    }],
+    ["North Korea", {
+        "capital": "Pyongyang",
+        "tzFull": "Asia/Pyongyang"
+    }],
+    ["South Korea", {
+        "capital": "Seoul",
+        "tzFull": "Asia/Seoul"
+    }],
+    ["Madagascar", {
+        "capital": "Antananarivo",
+        "tzFull": "Indian/Antananarivo"
+    }],
+    ["Malawi", {
+        "capital": "Lilongwe",
+        "tzFull": "Africa/Blantyre"
+    }],
+    ["Malaysia", {
+        "capital": "Kuala Lumpur",
+        "tzFull": "Asia/Kuala_Lumpur"
+    }],
+    ["Mali", {
+        "capital": "Bamako",
+        "tzFull": "Africa/Bamako"
+    }],
+    ["Mexico", {
+        "capital": "Mexico City",
+        "tzFull": "America/Mexico_City"
+    }],
+    ["Morocco", {
+        "capital": "Rabat",
+        "tzFull": "Europe/Malta"
+    }],
+    ["Mozambique", {
+        "capital": "Maputo",
+        "tzFull": "Africa/Maputo"
+    }],
+    ["Nepal", {
+        "capital": "Kathmandu",
+        "tzFull": "Asia/Katmandu"
+    }],
+    ["Netherlands", {
+        "capital": "Amsterdam",
+        "tzFull": "Europe/Amsterdam"
+    }],
+    ["Niger", {
+        "capital": "Niamey",
+        "tzFull": "Africa/Niamey"
+    }],
+    ["Nigeria", {
+        "capital": "Abuja",
+        "tzFull": "Africa/Lagos"
+    }],
+    ["Pakistan", {
+        "capital": "Islamabad",
+        "tzFull": "Asia/Karachi"
+    }],
+    ["Peru", {
+        "capital": "Lima",
+        "tzFull": "America/Lima"
+    }],
+    ["Philippines", {
+        "capital": "Manila",
+        "tzFull": "Asia/Manila"
+    }],
+    ["Poland", {
+        "capital": "Warsaw",
+        "tzFull": "Europe/Warsaw"
+    }],
+    ["Portugal", {
+        "capital": "Lisbon",
+        "tzFull": "Europe/Lisbon"
+    }],
+    ["Romania", {
+        "capital": "Bucharest",
+        "tzFull": "Europe/Bucharest"
+    }],
+    ["Russia", {
+        "capital": "Moscow",
+        "tzFull": "Europe/Moscow"
+    }],
+    ["Rwanda", {
+        "capital": "Kigali",
+        "tzFull": "Africa/Kigali"
+    }],
+    ["Saudi Arabia", {
+        "capital": "Riyadh",
+        "tzFull": "Asia/Riyadh"
+    }],
+    ["Senegal", {
+        "capital": "Dakar",
+        "tzFull": "Africa/Dakar"
+    }],
+    ["Somalia", {
+        "capital": "Mogadishu",
+        "tzFull": "Africa/Mogadishu"
+    }],
+    ["South Africa", {
+        "capital": "Pretoria",
+        "tzFull": "Africa/Johannesburg"
+    }],
+    ["South Sudan", {
+        "capital": "Juba",
+        "tzFull": "Africa/Juba"
+    }],
+    ["Spain", {
+        "capital": "Madrid",
+        "tzFull": "Europe/Madrid"
+    }],
+    ["Sri Lanka", {
+        "capital": "Sri Jayewardenepura Kotte",
+        "tzFull": "Asia/Colombo"
+    }],
+    ["Sudan", {
+        "capital": "Khartoum",
+        "tzFull": "Africa/Khartoum"
+    }],
+    ["Sweden", {
+        "capital": "Stockholm",
+        "tzFull": "Europe/Stockholm"
+    }],
+    ["Switzerland", {
+        "capital": "Bern",
+        "tzFull": "Europe/Zurich"
+    }],
+    ["Syria", {
+        "capital": "Damascus",
+        "tzFull": "Asia/Damascus"
+    }],
+    ["Taiwan", {
+        "capital": "Taipei",
+        "tzFull": "Asia/Taipei"
+    }],
+    ["Tajikistan", {
+        "capital": "Dushanbe",
+        "tzFull": "Asia/Dushanbe"
+    }],
+    ["Tanzania", {
+        "capital": "Dodoma",
+        "tzFull": "Africa/Dar_es_Salaam"
+    }],
+    ["Thailand", {
+        "capital": "Bangkok",
+        "tzFull": "Asia/Bangkok"
+    }],
+    ["Togo", {
+        "capital": "Lome",
+        "tzFull": "Africa/Lome"
+    }],
+    ["Tunisia", {
+        "capital": "Tunis",
+        "tzFull": "Africa/Tunis"
+    }],
+    ["Turkey", {
+        "capital": "Ankara",
+        "tzFull": "Europe/Istanbul"
+    }],
+    ["Uganda", {
+        "capital": "Kampala",
+        "tzFull": "Africa/Kampala"
+    }],
+    ["Ukraine", {
+        "capital": "Kyiv",
+        "tzFull": "Europe/Kiev"
+    }],
+    ["United Arab Emirates", {
+        "capital": "Abu Dhabi",
+        "tzFull": "Asia/Dubai"
+    }],
+    ["United Kingdom", {
+        "capital": "London",
+        "tzFull": "Europe/London"
+    }],
+    ["United States", {
+        "capital": "Washington",
+        "tzFull": "America/New_York"
+    }],
+    ["Uzbekistan", {
+        "capital": "Tashkent",
+        "tzFull": "Asia/Samarkand"
+    }],
+    ["Venezuela", {
+        "capital": "Caracas",
+        "tzFull": "America/Caracas"
+    }],
+    ["Vietnam", {
+        "capital": "Hanoi",
+        "tzFull": "Asia/Saigon"
+    }],
+    ["Yemen", {
+        "capital": "Sanaa",
+        "tzFull": "Asia/Aden"
+    }],
+    ["Zambia", {
+        "capital": "Lusaka",
+        "tzFull": "Africa/Lusaka"
+    }],
+    ["Zimbabwe", {
+        "capital": "Harare",
+        "tzFull": "Africa/Harare"
+    }]
+]);
+
 export {
     tzList,
     cityTimeZoneMap,
     countryTimeZoneMap,
     tzAbbrevationMap,
-    zoneAndPhrasesMap
+    zoneAndPhrasesMap,
+    countryAndCapitalMap
 }
