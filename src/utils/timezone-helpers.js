@@ -275,24 +275,6 @@ function searchByPhrase(text) {
     }
 }
 
-
-// console.time('searchByPhrase')
-// var out = findCountryForZone('kolkat');
-// var out= searchByCountryKeys('alb')
-// var out= searchByCityKeys('tanjore')
-// var out = searchByTzKeys('AZOST')
-
-
-// var out = searchByPhrase('kolkat');
-// var out= searchByPhrase('broken')
-// var out= searchByPhrase('korea')
-// var out= searchByPhrase('tanjore')
-// var out = searchByPhrase('AZOST')
-// var out = searchByPhrase('U.S.a')
-// console.log(out)
-// console.timeEnd('searchByPhrase')
-
-
 export {
     searchByPhrase
 }

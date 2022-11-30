@@ -13,7 +13,6 @@ function priorityPlugin( results ) {
         results
             .forEach(( rObj, i ) => {
                 if( rObj?.tzFull?.trim() === tzFull?.trim()) {
-                    console.log(tzFull?.trim())
                     const [record] = localizedResult.splice(i,1);
                     localizedResult.unshift(record);
                 }
