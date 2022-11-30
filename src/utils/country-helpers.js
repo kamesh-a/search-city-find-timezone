@@ -7,14 +7,18 @@ import { getCountryForTimezone } from 'countries-and-timezones';
  *          {string[]} countryInfo.timezones - [<zone-records>]
  */
 function getCountryInfo( tzName ) {
-    const zoneName = tzName?.trim();
-    if( zoneName ) {
-        const { id, name } = getCountryForTimezone(zoneName, { deprecated: false });
-        return {
-            id,
-            name
-        }
-    }
+   try {
+        const zoneName = tzName?.trim();
+        if( zoneName ) {
+            const { id, name } = getCountryForTimezone(zoneName, { deprecated: false }) ?? {};
+            return {
+                id,
+                name
+            }
+        } 
+   } catch(e) {
+        console.error(`error while getting country info ${e.stack}`)
+   }
 }
 
 
