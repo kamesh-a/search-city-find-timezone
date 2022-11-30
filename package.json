@@ -1,24 +1,23 @@
 {
   "name": "@kamesh-a/city-to-timezones",
-  "version": "0.1.3",
+  "version": "0.1.7",
   "description": "Get timezone and date for by searching for city, country and tz abbrevations",
-  "main": "./dist/index.js",
-  "module": "./esm/index.js",
+  "type": "module",
+  "main": "./dist/index.mjs",
   "exports": {
     "require": "./dist/index.js",
-    "import": "./esm/index.js"
+    "import": "./dist/index.mjs"
   },
   "scripts": {
     "prepare": "husky install",
     "clean": "rimraf dist esm",
     "compile": "node misc/compile.js",
     "prepublish": "npm run build",
-    "build": "npm run clean && node misc/build.js",
+    "build": "npm run clean && node misc/build.cjs",
     "test": "exit 0"
   },
   "files": [
-    "dist",
-    "esm"
+    "dist"
   ],
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
