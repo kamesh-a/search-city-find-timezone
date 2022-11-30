@@ -1,4 +1,4 @@
-const { formatInTimeZone, format } = require('date-fns-tz');
+import { formatInTimeZone, format } from 'date-fns-tz';
 
 const DEFAULT_TZ_FORMAT = 'yyyy-MM-dd__hh:mm:ss aaa__zzzz';
 const TIME_FORMAT = 'hh:mm:ss aaa';
@@ -40,7 +40,7 @@ function formatDate(zoneName, date = new Date(), format = DEFAULT_TZ_FORMAT) {
     return format && formatInTimeZone(date, zoneName, format)
 }
 
-module.exports = {
+export {
     formatDate,
     getTzShortName,
     getTzFullName,

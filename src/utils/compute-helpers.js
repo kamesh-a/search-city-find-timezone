@@ -1,6 +1,6 @@
-const { getCountryInfo } = require("./country-helpers");
-const { formatDate, getTzShortName } = require("./date-helpers");
-const { searchByPhrase } = require("./timezone-helpers");
+import { getCountryInfo } from "./country-helpers"
+import { formatDate, getTzShortName } from "./date-helpers";
+import { searchByPhrase } from "./timezone-helpers";
 
 function buildObjInfoWithTz( tzName, keyWordMatch ) {
     if( tzName ) {
@@ -44,6 +44,6 @@ function getTimeWithCityCountryZoneName( text ) {
     return [];
 }
 
-module.exports = {
+export {
     getTimeWithCityCountryZoneName
 }

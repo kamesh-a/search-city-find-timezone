@@ -1,4 +1,4 @@
-const { getCountryForTimezone } = require('countries-and-timezones')
+import { getCountryForTimezone } from 'countries-and-timezones';
 /**
  * 
  * @returns {object} countryInfo
@@ -18,6 +18,6 @@ function getCountryInfo( tzName ) {
 }
 
 
-module.exports = {
+export {
     getCountryInfo
 }

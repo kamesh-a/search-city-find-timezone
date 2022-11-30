@@ -5226,7 +5226,7 @@ const zoneAndPhrasesMap = new Map([
     ["Pacific/Kanton", ["enderbury"]]
 ])
 
-module.exports = {
+export {
     tzList,
     cityTimeZoneMap,
     countryTimeZoneMap,

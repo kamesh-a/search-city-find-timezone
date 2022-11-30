@@ -1,5 +1,5 @@
-const { getSystemTimezone } = require("./utils/date-helpers");
-const { getTimeWithCityCountryZoneName } = require("./utils/compute-helpers");
+import { getSystemTimezone } from './utils/date-helpers';
+import { getTimeWithCityCountryZoneName } from './utils/compute-helpers';
 
 // TODO: prioritization plugin
 // TODO: filer unique timezone plugin - done
@@ -49,6 +49,6 @@ function computeTimeByCityOrCountryOrZone( userInputText ) {
     }
 }
 
-module.exports = {
-    getTzInfo: computeTimeByCityOrCountryOrZone
+export {
+    computeTimeByCityOrCountryOrZone as getTzInfo 
 }

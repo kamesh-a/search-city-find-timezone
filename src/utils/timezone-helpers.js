@@ -1,10 +1,10 @@
-const { 
+import { 
         countryTimeZoneMap, 
         cityTimeZoneMap, 
         tzAbbrevationMap, 
         zoneAndPhrasesMap, 
         tzList 
-    } = require('../../timezone-data/tz-info');
+    } from '../../timezone-data/tz-info';
 /** 
     Ref: https://share.anysnap.app/fGHDsCbpQ2BL
 
@@ -293,6 +293,6 @@ function searchByPhrase(text) {
 // console.timeEnd('searchByPhrase')
 
 
-module.exports = {
+export {
     searchByPhrase
 }

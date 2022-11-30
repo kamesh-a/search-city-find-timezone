@@ -1,4 +1,4 @@
-const countryAndCaptial = [{
+export const countryAndCaptial = [{
     "name": "Afghanistan",
     "code": "AF",
     "capital": "Kabul"
@@ -983,7 +983,3 @@ const countryAndCaptial = [{
     "code": "ZW",
     "capital": "Harare"
 }]
-
-module.exports = {
-    countryAndCaptial
-}

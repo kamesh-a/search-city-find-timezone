@@ -23,6 +23,6 @@ require("esbuild")
         minify: true,
         sourcemap: false,
         target: ['chrome100', 'firefox100', 'safari11', 'edge100'],
-        outfile: "esm/index.js",
+        outfile: "esm/index.mjs",
     })
     .catch(() => process.exit(1));
