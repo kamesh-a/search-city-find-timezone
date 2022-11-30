@@ -1,6 +1,6 @@
 {
   "name": "@kamesh-a/city-to-timezones",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Get timezone and date for by searching for city, country and tz abbrevations",
   "main": "./dist/index.mjs",
   "exports": {
@@ -37,7 +37,8 @@
   "author": "kamesh.arumugam@gmail.com",
   "license": "MIT",
   "volta": {
-    "node": "16.18.1"
+    "node": "16.18.1",
+    "npm": "9.1.2"
   },
   "dependencies": {
     "countries-and-timezones": "^3.3.0",
@@ -48,8 +49,9 @@
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
     "esbuild": "^0.15.16",
-    "fs-extra": "^11.0.0",
+    "fs-extra": "^11.1.0",
     "husky": "^8.0.2",
+    "npm-check-updates": "^16.4.3",
     "rimraf": "^3.0.2"
   }
 }
