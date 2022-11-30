@@ -1,6 +1,6 @@
 {
   "name": "@kamesh-a/city-to-timezones",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "description": "Get timezone and date for by searching for city, country and tz abbrevations",
   "main": "./dist/index.mjs",
   "exports": {
@@ -11,7 +11,7 @@
     "prepare": "husky install",
     "clean": "rimraf dist esm",
     "compile": "node misc/compile.js",
-    "prepublish": "npm run build",
+    "upload": "npm run build && npm publish",
     "build": "npm run clean && node misc/build.js",
     "test": "exit 0"
   },
