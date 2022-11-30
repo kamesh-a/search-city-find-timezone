@@ -1,8 +1,16 @@
-const { formatInTimeZone } = require('date-fns-tz');
+const { formatInTimeZone, format } = require('date-fns-tz');
 
 const DEFAULT_TZ_FORMAT = 'yyyy-MM-dd__hh:mm:ss aaa__zzzz';
 const TIME_FORMAT = 'hh:mm:ss aaa';
 const SHORT_TZ_FORMAT = 'zzzz';
+
+function getSystemTimezone() {
+    const tz = format( new Date(), 'zzzz');
+    return {
+        tzRaw: tz,
+        tzShort: getTzShortName(tz)
+    }
+}
 
 /**
  * 
@@ -35,5 +43,6 @@ function formatDate(zoneName, date = new Date(), format = DEFAULT_TZ_FORMAT) {
 module.exports = {
     formatDate,
     getTzShortName,
-    getTzFullName
+    getTzFullName,
+    getSystemTimezone
 }

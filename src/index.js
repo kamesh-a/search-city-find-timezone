@@ -1,9 +1,13 @@
+const { getSystemTimezone } = require("./utils/date-helpers");
 const { getTimeWithCityCountryZoneName } = require("./utils/compute-helpers");
 
 // TODO: prioritization plugin
 // TODO: filer unique timezone plugin - done
 // TODO: flat the zonelist plugin - done
 
+function priorityPlugin( results ) {
+    const { tzRaw } = getSystemTimezone();
+}
 
 function uniqueTzPlugin( results ) {
     if( results && results.length ) {
@@ -45,4 +49,6 @@ function computeTimeByCityOrCountryOrZone( userInputText ) {
     }
 }
 
-console.log(computeTimeByCityOrCountryOrZone('austra'))
+module.exports = {
+    getTzInfo: computeTimeByCityOrCountryOrZone
+}
