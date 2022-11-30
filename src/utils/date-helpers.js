@@ -7,7 +7,7 @@ const SHORT_TZ_FORMAT = 'zzzz';
 function getSystemTimezone() {
     const tz = format( new Date(), 'zzzz');
     return {
-        tzRaw: tz,
+        tzFull: tz,
         tzShort: getTzShortName(tz)
     }
 }

@@ -6,7 +6,20 @@ import { getTimeWithCityCountryZoneName } from './utils/compute-helpers';
 // TODO: flat the zonelist plugin - done
 
 function priorityPlugin( results ) {
-    const { tzRaw } = getSystemTimezone();
+    const { tzFull } = getSystemTimezone();
+    if( tzFull ) {
+        const localizedResult = [...results];
+        results
+            .forEach(( rObj, i ) => {
+                if( rObj?.tzFull?.trim() === tzFull?.trim()) {
+                    console.log(tzFull?.trim())
+                    const [record] = localizedResult.splice(i,1);
+                    localizedResult.unshift(record);
+                }
+        })
+
+        return localizedResult;
+    }
 }
 
 function uniqueTzPlugin( results ) {
@@ -40,7 +53,7 @@ function computeTimeByCityOrCountryOrZone( userInputText ) {
             const searchKey = userInputText.trim();
             const output = getTimeWithCityCountryZoneName(searchKey);
             if( output?.length ) {
-                return uniqueTzPlugin(flatPlugin(output));
+                return priorityPlugin(uniqueTzPlugin(flatPlugin(output)));
             }
         }
     }
