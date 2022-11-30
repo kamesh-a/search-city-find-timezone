@@ -1,8 +1,7 @@
 {
   "name": "@kamesh-a/city-to-timezones",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Get timezone and date for by searching for city, country and tz abbrevations",
-  "type": "module",
   "main": "./dist/index.mjs",
   "exports": {
     "require": "./dist/index.js",
@@ -13,7 +12,7 @@
     "clean": "rimraf dist esm",
     "compile": "node misc/compile.js",
     "prepublish": "npm run build",
-    "build": "npm run clean && node misc/build.cjs",
+    "build": "npm run clean && node misc/build.js",
     "test": "exit 0"
   },
   "files": [
