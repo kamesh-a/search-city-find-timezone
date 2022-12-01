@@ -276,5 +276,6 @@ function searchByPhrase(text) {
 }
 
 export {
-    searchByPhrase
+    searchByPhrase,
+    getLastPartOfTimeZone
 }

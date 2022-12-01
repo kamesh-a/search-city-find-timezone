@@ -1,11 +1,14 @@
 import { getSystemTimezone } from './utils/date-helpers';
-import { getTimeWithCityCountryZoneName } from './utils/compute-helpers';
+import { 
+    getSystemTzInfo, 
+    getTzInfoByTimeZoneName,
+    getTimeWithCityCountryZoneName, 
+} from './utils/compute-helpers';
 import { getCountriesAndCapital } from './utils/country-helpers';
 
-// TODO: prioritization plugin
+// TODO: prioritization plugin - Done
 // TODO: filer unique timezone plugin - done
 // TODO: flat the zonelist plugin - done
-
 function priorityPlugin( results ) {
     const { tzFull } = getSystemTimezone();
     if( tzFull ) {
@@ -63,6 +66,8 @@ function computeTimeByCityOrCountryOrZone( userInputText ) {
 }
 
 export {
-    computeTimeByCityOrCountryOrZone as getTzInfo,
-    getCountriesAndCapital as getCountryInfo
+    getSystemTzInfo,
+    getCountriesAndCapital as getCountryInfo,
+    getTzInfoByTimeZoneName as getTzInfoByTzName,
+    computeTimeByCityOrCountryOrZone as getTzInfo
 }

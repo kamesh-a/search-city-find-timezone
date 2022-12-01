@@ -1,12 +1,15 @@
 import { formatInTimeZone, format } from 'date-fns-tz';
+import { DEFAULT_TZ_FORMAT, SHORT_TZ_FORMAT} from '../constants';
 
-const DEFAULT_TZ_FORMAT = 'yyyy-MM-dd__hh:mm:ss aaa__zzzz';
-const TIME_FORMAT = 'hh:mm:ss aaa';
-const SHORT_TZ_FORMAT = 'zzzz';
+// Ref: https://date-fns.org/v2.29.3/docs/format
+// Ref: https://bobbyhadz.com/blog/javascript-get-timezone-name
 
+// const DEFAULT_TZ_FORMAT = 'yyyy-MM-dd__hh:mm:ss aaa__zzzz';
 function getSystemTimezone() {
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const tz = format( new Date(), 'zzzz');
     return {
+        tzRaw: timeZone,
         tzFull: tz,
         tzShort: getTzShortName(tz)
     }
@@ -19,6 +22,11 @@ function getSystemTimezone() {
  */
 function getTzShortName(tzAbbrevation) {
     if (tzAbbrevation) {
+
+        if(tzAbbrevation.includes('GMT')) {
+            return tzAbbrevation;
+        }
+
         const tzFullName = tzAbbrevation?.trim();
         return tzFullName.split(' ').reduce((a, c) => {
             return a + c.charAt(0);
