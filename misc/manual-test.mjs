@@ -1,3 +1,3 @@
-import { getTzInfo, getSystemTzInfo} from '../dist/index.mjs'
+import { getTzInfo, getSystemTzInfo, getCountryTzInfo} from '../dist/index.mjs'
 
-console.log(getTzInfo('argentin'))
+console.log(getCountryTzInfo('argentin'))

@@ -51,11 +51,18 @@ function getCountriesAndCapital() {
         map
          .forEach(({ capital, tzFull : tzRaw }, key) => {
             const formattedTime = formatDate(tzRaw);
+            const { id: countryCode, name: countryName } = getCountryInfo(tzRaw);
             const [day,time,tzFullName] = formattedTime.split('__');
+            
+            if( countryName !== key ) {
+                console.log(`We are seeing a mismatch country name ${key} - ${countryName} for zone ${tzRaw}`)
+            }
+
             const info = {
                 time,
                 day,
                 phrase: capital,
+                countryCode,
                 countryName: key,
                 tzRaw,
                 tzShort: getTzShortName(tzFullName),
