@@ -67,7 +67,8 @@ function computeTimeByCityOrCountryOrZone( userInputText ) {
 
 export {
     getSystemTzInfo,
-    getCountriesAndCapital as getCountryInfo,
+    getCountriesAndCapital as getCountryTzInfo,
     getTzInfoByTimeZoneName as getTzInfoByTzName,
-    computeTimeByCityOrCountryOrZone as getTzInfo
+    computeTimeByCityOrCountryOrZone as getTzInfo,
+    computeTimeByCityOrCountryOrZone as searchTzInfo
 }
