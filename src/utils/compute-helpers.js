@@ -38,7 +38,7 @@ function fillTimeZoneAndCountryInfo( searchResultObj ) {
         * Below block of code uses meta info to make patches
         * on data
         */
-        if(meta?.isTzAbbr) {
+        if(meta?.isTzAbbr || meta?.isCountry) {
             tzListUpdated = tzListUpdated
                 .map( info => {
                     return { ...info, phrase: getLastPartOfTimeZone(info.tzRaw)}
