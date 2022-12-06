@@ -1,4 +1,4 @@
-import { getSystemTimezone } from './utils/date-helpers';
+import { formatDate, getSystemTimezone } from './utils/date-helpers';
 import { 
     getSystemTzInfo, 
     getTzInfoByTimeZoneName,
@@ -52,7 +52,7 @@ function flatPlugin( results ) {
 
 function computeTimeByCityOrCountryOrZone( userInputText ) {
     try {
-        if( typeof userInputText === 'string' ) {
+        if( typeof userInputText === 'string' && userInputText?.trim() ) {
             const searchKey = userInputText.trim();
             const output = getTimeWithCityCountryZoneName(searchKey);
             if( output?.length ) {
@@ -70,5 +70,6 @@ export {
     getCountriesAndCapital as getCountryTzInfo,
     getTzInfoByTimeZoneName as getTzInfoByTzName,
     computeTimeByCityOrCountryOrZone as getTzInfo,
-    computeTimeByCityOrCountryOrZone as searchTzInfo
+    computeTimeByCityOrCountryOrZone as searchTzInfo,
+    formatDate
 }
