@@ -155,7 +155,7 @@ function searchByZonePhraseKeys( phrase) {
 function getLastPartOfTimeZone( tzName ) {
     if( tzName ) {
         const tzArr = tzName?.trim()?.split('/');
-        return tzArr[tzArr.length-1];
+        return tzArr[tzArr.length-1]?.replaceAll('_',' ')?.trim();
     }
 }
 
