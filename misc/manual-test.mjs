@@ -1,3 +1,3 @@
-import { getTzInfo, getSystemTzInfo, getCountryTzInfo} from '../dist/index.mjs'
+import { searchTzInfo, getSystemTzInfo, getCountryTzInfo} from '../dist/index.mjs'
 
-console.log(getTzInfo())
+console.log(searchTzInfo('indiana'))
