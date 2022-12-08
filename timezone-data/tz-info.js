@@ -4430,7 +4430,6 @@ const cityTimeZoneMap = new Map([
     ["Costa Mesa", ["America/Los_Angeles"]],
     ["Daly City", ["America/Los_Angeles"]],
     ["Downey", ["America/Los_Angeles"]],
-    ["East Los Angeles", ["America/Los_Angeles"]],
     ["El Cajon", ["America/Los_Angeles"]],
     ["El Monte", ["America/Los_Angeles"]],
     ["Elk Grove", ["America/Los_Angeles"]],
@@ -5283,10 +5282,6 @@ const countryAndCapitalMap = new Map([
         "capital": "Ouagadougou",
         "tzFull": "Africa/Ouagadougou"
     }],
-    ["Myanmar", {
-        "capital": "Nay Pyi Taw",
-        "tzFull": "Asia/Rangoon"
-    }],
     ["Burundi", {
         "capital": "Gitega",
         "tzFull": "Africa/Bujumbura"
@@ -5462,6 +5457,10 @@ const countryAndCapitalMap = new Map([
     ["Mozambique", {
         "capital": "Maputo",
         "tzFull": "Africa/Maputo"
+    }],
+    ["Myanmar", {
+        "capital": "Nay Pyi Taw",
+        "tzFull": "Asia/Rangoon"
     }],
     ["Nepal", {
         "capital": "Kathmandu",

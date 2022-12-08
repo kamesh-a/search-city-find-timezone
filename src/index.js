@@ -6,9 +6,17 @@ import {
 } from './utils/compute-helpers';
 import { getCountriesAndCapital } from './utils/country-helpers';
 
+// TODO: sort plugin
 // TODO: prioritization plugin - Done
 // TODO: filer unique timezone plugin - done
 // TODO: flat the zonelist plugin - done
+
+function sortPlugin( results ) {
+    if( results?.length ) {
+        return results.sort(( a,b ) => a.localeCompare(b))
+    }
+}
+
 function priorityPlugin( results ) {
     const { tzFull } = getSystemTimezone();
     if( tzFull ) {
@@ -56,7 +64,7 @@ function computeTimeByCityOrCountryOrZone( userInputText ) {
             const searchKey = userInputText.trim();
             const output = getTimeWithCityCountryZoneName(searchKey);
             if( output?.length ) {
-                return priorityPlugin(uniqueTzPlugin(flatPlugin(output)));
+                return priorityPlugin(sortPlugin(uniqueTzPlugin(flatPlugin(output))));
             }
         }
     }
