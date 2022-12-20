@@ -6,14 +6,18 @@ import {
 } from './utils/compute-helpers';
 import { getCountriesAndCapital } from './utils/country-helpers';
 
-// TODO: sort plugin
-// TODO: prioritization plugin - Done
-// TODO: filer unique timezone plugin - done
-// TODO: flat the zonelist plugin - done
+// TODO: Sort plugin - Done
+// TODO: Prioritization plugin - Done
+// TODO: Filer unique timezone plugin - done
+// TODO: Flat the zonelist plugin - done
 
 function sortPlugin( results ) {
     if( results?.length ) {
-        return results.sort(( a,b ) => a.localeCompare(b))
+        return results.sort(( a,b ) => {
+            const { countryName : aName } = a;
+            const { countryName : bName } = b;
+            return aName?.localeCompare(bName);
+        });
     }
 }
 
