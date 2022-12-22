@@ -81,7 +81,6 @@ export {
     getSystemTzInfo,
     getCountriesAndCapital as getCountryTzInfo,
     getTzInfoByTimeZoneName as getTzInfoByTzName,
-    computeTimeByCityOrCountryOrZone as getTzInfo,
     computeTimeByCityOrCountryOrZone as searchTzInfo,
     formatDate
 }

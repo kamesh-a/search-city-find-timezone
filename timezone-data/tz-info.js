@@ -5422,14 +5422,6 @@ const countryAndCapitalMap = new Map([
         "capital": "Nairobi",
         "tzFull": "Africa/Nairobi"
     }],
-    ["North Korea", {
-        "capital": "Pyongyang",
-        "tzFull": "Asia/Pyongyang"
-    }],
-    ["South Korea", {
-        "capital": "Seoul",
-        "tzFull": "Asia/Seoul"
-    }],
     ["Madagascar", {
         "capital": "Antananarivo",
         "tzFull": "Indian/Antananarivo"
@@ -5478,6 +5470,10 @@ const countryAndCapitalMap = new Map([
         "capital": "Abuja",
         "tzFull": "Africa/Lagos"
     }],
+    ["North Korea", {
+      "capital": "Pyongyang",
+      "tzFull": "Asia/Pyongyang"
+    }],
     ["Pakistan", {
         "capital": "Islamabad",
         "tzFull": "Asia/Karachi"
@@ -5525,6 +5521,10 @@ const countryAndCapitalMap = new Map([
     ["South Africa", {
         "capital": "Pretoria",
         "tzFull": "Africa/Johannesburg"
+    }],
+    ["South Korea", {
+      "capital": "Seoul",
+      "tzFull": "Asia/Seoul"
     }],
     ["South Sudan", {
         "capital": "Juba",
