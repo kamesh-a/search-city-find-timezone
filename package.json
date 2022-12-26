@@ -1,6 +1,6 @@
 {
   "name": "@kamesh-a/city-to-timezones",
-  "version": "0.2.17",
+  "version": "0.2.18",
   "description": "Get timezone and date for by searching for city, country and tz abbrevations",
   "main": "./dist/index.mjs",
   "exports": {
