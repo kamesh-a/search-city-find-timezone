@@ -1,3 +1,3 @@
 import { searchTzInfo, getSystemTzInfo, getCountryTzInfo} from '../dist/index.mjs'
 
-console.log(searchTzInfo('lon'))
+console.log(searchTzInfo('Pacific time'))

@@ -2,6 +2,8 @@ import {
         countryTimeZoneMap, 
         cityTimeZoneMap, 
         tzAbbrevationMap, 
+        tzFullNameAbbrevMap,
+        tzFullNameZoneMap,
         zoneAndPhrasesMap, 
         tzList 
     } from '../../timezone-data/tz-info';
@@ -23,6 +25,8 @@ import {
 const tzKeys = [...tzAbbrevationMap.keys()];
 const countryKeys = [...countryTimeZoneMap.keys()];
 const cityKeys = [...cityTimeZoneMap.keys()];
+const tzNameAbbrevKeys = [...tzFullNameAbbrevMap.keys()];
+const tzNameKeys = [...tzFullNameZoneMap.keys()];
 
 const META_INFO = {
     isCity: false,
@@ -30,6 +34,7 @@ const META_INFO = {
     isTzAbbr: false,
     isTzName: false,
     isPhraseName: false,
+    isTzFullName: false
 };
 
 const DEFAULT_SHAPE = {
@@ -71,6 +76,54 @@ function searchByTzKeys( phrase ) {
         }]
     }
 }
+
+// Ref: tzFullNameAbbrevMap in time zone data to understand the shape
+function searchByTzNameAbbrevKeys(phrase) {
+  const name = phrase?.toLowerCase();
+  if (tzNameAbbrevKeys.length) {
+    const result = tzNameAbbrevKeys
+      .filter((tzName) => {
+        return tzName?.toLowerCase().includes(name);
+      })
+      .map((tzName) => {
+        const tzAbbrev = tzFullNameAbbrevMap.get(tzName);
+        const tzList = tzAbbrevationMap.get(tzAbbrev);
+        return {
+          ...DEFAULT_SHAPE,
+          phrase: tzName,
+          tzList,
+          meta: {
+            ...META_INFO,
+            isTzAbbr: true,
+          },
+        };
+      });
+    return result;
+  }
+}
+
+function searchByTzNameKeys(phrase) {
+    const name = phrase?.toLowerCase();
+    if (tzNameKeys.length) {
+      const result = tzNameKeys
+        .filter((tzName) => {
+          return tzName?.toLowerCase().includes(name);
+        })
+        .map((tzName) => {
+          const tzList = tzFullNameZoneMap.get(tzName);
+          return {
+            ...DEFAULT_SHAPE,
+            phrase: tzName,
+            tzList,
+            meta: {
+              ...META_INFO,
+              isTzFullName: true,
+            },
+          };
+        });
+      return result;
+    }
+  }
 
 // Ref: countryTimeZoneMap in time zone data to understand the shape
 function searchByCountryKeys( phrase ) {
@@ -234,11 +287,22 @@ function searchByPhrase(text) {
     
     const phrase = text?.trim();
     if( phrase ) {
+      
         let result = [];
-        const tzResult = searchByTzKeys(phrase);
 
+        const tzResult = searchByTzKeys(phrase);
         if( tzResult?.length ) {
             result = [ ...tzResult ];
+        }
+
+        const tzNameAbbrevResult = searchByTzNameAbbrevKeys(phrase);
+        if( tzNameAbbrevResult?.length ) {
+            result = [  ...result, ...tzNameAbbrevResult ];
+        }
+
+        const tzNameZoneResult = searchByTzNameKeys(phrase);
+        if( tzNameZoneResult?.length ) {
+            result = [  ...result, ...tzNameZoneResult ];
         }
 
         const cityResult = searchByCityKeys(phrase);
