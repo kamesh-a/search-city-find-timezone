@@ -1,5 +1,6 @@
 import { formatInTimeZone, format } from 'date-fns-tz';
-import { DEFAULT_TZ_FORMAT, SHORT_TZ_FORMAT, COORDINATED_UNIVERSAL_TIME} from '../constants';
+import { DEFAULT_TZ_FORMAT, SHORT_TZ_FORMAT, 
+    COORDINATED_UNIVERSAL_TIME, UTC} from '../constants';
 
 // Ref: https://date-fns.org/v2.29.3/docs/format
 // Ref: https://bobbyhadz.com/blog/javascript-get-timezone-name
@@ -27,8 +28,8 @@ function getTzShortName(tzAbbrevation) {
             return tzAbbrevation;
         }
         
-        if(tzAbbrevation.toLowerCase().includes(COORDINATED_UNIVERSAL_TIME)){
-            return 'UTC';
+        if(tzAbbrevation.toLowerCase().includes(COORDINATED_UNIVERSAL_TIME.toLowerCase())){
+            return UTC;
         }
         const tzFullName = tzAbbrevation?.trim();
         return tzFullName.split(' ').reduce((a, c) => {
