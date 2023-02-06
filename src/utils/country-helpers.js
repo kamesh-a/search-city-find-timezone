@@ -12,6 +12,12 @@ function getCountryInfo( tzName ) {
    try {
         const zoneName = tzName?.trim();
         if( zoneName ) {
+            if(tzName === "UTC"){
+                return {
+                    id: "UTC", 
+                    name: "UTC"
+                }
+            }
             const { id, name } = getCountryForTimezone(zoneName, { deprecated: false }) ?? {};
             return {
                 id,

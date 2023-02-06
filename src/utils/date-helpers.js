@@ -26,7 +26,10 @@ function getTzShortName(tzAbbrevation) {
         if(tzAbbrevation.includes('GMT')) {
             return tzAbbrevation;
         }
-
+        
+        if(tzAbbrevation.includes('Coordinated Universal Time')){
+            return 'UTC';
+        }
         const tzFullName = tzAbbrevation?.trim();
         return tzFullName.split(' ').reduce((a, c) => {
             return a + c.charAt(0);
