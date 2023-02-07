@@ -1,6 +1,8 @@
 import { getCountryForTimezone } from 'countries-and-timezones';
 import { countryAndCapitalMap } from '../../timezone-data/tz-info';
 import { formatDate, getTzShortName } from './date-helpers';
+import { COORDINATED_UNIVERSAL_TIME, UTC } from '../constants';
+
 /**
  * 
  * @returns {object} countryInfo
@@ -12,6 +14,12 @@ function getCountryInfo( tzName ) {
    try {
         const zoneName = tzName?.trim();
         if( zoneName ) {
+            if(zoneName.includes(UTC)){
+                return {
+                    id: UTC, 
+                    name: COORDINATED_UNIVERSAL_TIME
+                }
+            }
             const { id, name } = getCountryForTimezone(zoneName, { deprecated: false }) ?? {};
             return {
                 id,
